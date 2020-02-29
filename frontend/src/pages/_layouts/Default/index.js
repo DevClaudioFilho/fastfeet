@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Header from '../../../components/Header'
+
 import { Wrapper, Content } from './styles';
 
 export default function SingIn({ children }) {
   return (
     <Wrapper>
-      <Content>{children}</Content>
+      <Header/>
+      <Content>
+        {children}
+      </Content>
     </Wrapper>
   );
 }
