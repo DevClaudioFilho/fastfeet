@@ -13,12 +13,15 @@ export default function Header() {
           <img src={logo} alt="Fastfeet" />
           <Link to="/packages">ENCOMENDAS</Link>
           <Link to="/deliverymans">ENTREGADORES</Link>
+          <Link to="/recipients">DESTINATÁRIOS</Link>
+          <Link to="/problems">PROBLEMAS</Link>
         </nav>
 
         <aside>
           <Profile>
             <div>
               <strong>Demo</strong>
+              <a>sair do sistema</a>
             </div>
           </Profile>
         </aside>

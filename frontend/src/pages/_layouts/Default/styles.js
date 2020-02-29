@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const Content = styled.div`  
+export const Content = styled.div`
   width: 360px;
   height: 425px;
   background: #fff;
@@ -33,8 +33,9 @@ export const Content = styled.div`
     color: #444444;
   }
   input {
-    width: 300px;
+    width: 270px;
     height: 45px;
+    padding: 0 15px 0 15px;
     border-radius: 4px;
     border-width: 1px;
     margin: 0 0 15px;

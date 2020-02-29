@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background: #f2f2f2;
+  background: #F5F5F5;
   height: 100%;
   div.title {
     width: 900px;
@@ -17,6 +17,8 @@ export const Wrapper = styled.div`
     }
   }
   form {
-  
+
   }
 `;
+
+

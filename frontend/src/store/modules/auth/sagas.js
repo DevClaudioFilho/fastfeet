@@ -18,7 +18,7 @@ export function* singIn({payload}) {
 
     yield put(singInSucess(token, user));
 
-    history.push('/dashboard');
+    history.push('/packages');
   }
   catch(err){
     yield put(singFailure())

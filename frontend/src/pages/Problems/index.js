@@ -6,7 +6,7 @@ import {Link } from 'react-router-dom'
 
 import { Container, Title , Table } from './styles';
 
-export default function Packages() {
+export default function Recipients() {
   const [students, setStudents] = useState([]);
 
   useEffect(()=>{
@@ -27,41 +27,27 @@ export default function Packages() {
   return (
     <Container>
       <Title>
-        <h1>Gerenciando Encomendas</h1>
-        <div>
-          <input
-          id="search-input"
-          type="text"
-          placeholder="Buscar por Encomendas"
-          onChange={e =>
-           e.target.value}
-          />
-          <Link to='/students'><button>CADASTRAR</button></Link>
-        </div>
+        <h1>Gerenciando Destinatários</h1>
       </Title>
         <Table>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Destinatário</th>
-              <th>Entregador</th>
-              <th>Cidade</th>
-              <th>Estado</th>
-              <th>Status</th>
+              <th>Encomenda</th>
+              <th>Problema</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
               <tr>
-                <td>5</td>
-                <td>joao</td>
-                <td>mario</td>
-                <td>brasilia</td>
-                <td>df</td>
-                <td>pendente</td>
+                <td>#5</td>
+                <td> nao me entregaram a mercadoria</td>
                 <td>...</td>
               </tr>
-
+              <tr>
+                <td>#5</td>
+                <td> nao me entregaram a mercadoria</td>
+                <td>...</td>
+              </tr>
           </tbody>
         </Table>
     </Container>

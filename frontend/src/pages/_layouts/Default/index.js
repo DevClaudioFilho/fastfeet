@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Header from '../../../components/Header'
-
 import { Wrapper, Content } from './styles';
 
-export default function SingIn({ children }) {
+export default function DefaultLayout({ children }) {
   return (
     <Wrapper>
-      <Header/>
       <Content>
         {children}
       </Content>
@@ -16,6 +13,6 @@ export default function SingIn({ children }) {
   );
 }
 
-SingIn.propTypes = {
+DefaultLayout.propTypes = {
   children: PropTypes.element.isRequired,
 };
