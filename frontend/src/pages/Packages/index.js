@@ -2,26 +2,28 @@ import React, {useState, useEffect} from 'react';
 import api from '../../services/api'
 import {Link } from 'react-router-dom'
 
+import { IoMdCreate } from 'react-icons/io'
+import { MdDelete } from 'react-icons/md'
 
 
-import { Container, Title , Table } from './styles';
+import { Container, Title , Table, DropDown } from './styles';
 
 export default function Packages() {
-  const [students, setStudents] = useState([]);
+  const [packages, setPackages] = useState([]);
 
   useEffect(()=>{
-    async function getStudents(){
-      const response = await api.get('/students');
-      setStudents(response.data)
+    async function getPackages(){
+      const response = await api.get('/packages');
+      setPackages(response.data)
     }
-    getStudents();
+    getPackages();
   },[])
 
 
   function handleDelete(id){
-    api.delete(`students/${id}`)
-    const response =  students.filter(student => student.id  !== id);
-    setStudents(response)
+    api.delete(`packages/${id}`)
+    const response =  packages.filter(student => student.id  !== id);
+    setPackages(response)
     }
 
   return (
@@ -36,7 +38,7 @@ export default function Packages() {
           onChange={e =>
            e.target.value}
           />
-          <Link to='/students'><button>CADASTRAR</button></Link>
+          <Link to='/createpackages'><button>CADASTRAR</button></Link>
         </div>
       </Title>
         <Table>
@@ -52,16 +54,25 @@ export default function Packages() {
             </tr>
           </thead>
           <tbody>
-              <tr>
-                <td>5</td>
-                <td>joao</td>
-                <td>mario</td>
-                <td>brasilia</td>
-                <td>df</td>
+          {packages.map(pack => (
+              <tr key={pack.id}>
+                <td>#{pack.id}</td>
+                <td>{pack.recipient_id}</td>
+                <td>{pack.deliveryman_id}</td>
+                <td>{pack.recipient_id}</td>
+                <td>{pack.recipient_id}</td>
                 <td>pendente</td>
-                <td>...</td>
+                <td>
+                  <DropDown>
+                    <p>...</p>
+                    <div>
+                      <Link to="/editpackages"><IoMdCreate/>Editar</Link>
+                      <button onClick={handleDelete}><MdDelete/>Delete</button>
+                    </div>
+                  </DropDown>
+                </td>
               </tr>
-
+          ))}
           </tbody>
         </Table>
     </Container>

@@ -18,16 +18,16 @@ export default function Deliverymans() {
   },[])
 
 
-  function handleDelete(id){
+  /*function handleDelete(id){
     api.delete(`students/${id}`)
     const response =  students.filter(student => student.id  !== id);
     setStudents(response)
-    }
+    }*/
 
   return (
     <Container>
       <Title>
-        <h1>Gerenciando entregadores</h1>
+        <h1>Gerenciando Entregadores</h1>
         <div>
           <input
           id="search-input"
@@ -36,7 +36,7 @@ export default function Deliverymans() {
           onChange={e =>
            e.target.value}
           />
-          <Link to='/students'><button>CADASTRAR</button></Link>
+          <Link to='/createdeliverymans'><button>CADASTRAR</button></Link>
         </div>
       </Title>
         <Table>

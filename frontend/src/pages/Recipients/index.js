@@ -36,7 +36,7 @@ export default function Recipients() {
           onChange={e =>
            e.target.value}
           />
-          <Link to='/students'><button>CADASTRAR</button></Link>
+          <Link to='/createrecipients'><button>CADASTRAR</button></Link>
         </div>
       </Title>
       <Table>

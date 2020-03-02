@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import api from '../../services/api'
-import {Link } from 'react-router-dom'
-
-
 
 import { Container, Title , Table } from './styles';
 
@@ -18,11 +15,11 @@ export default function Recipients() {
   },[])
 
 
-  function handleDelete(id){
+  /*function handleDelete(id){
     api.delete(`students/${id}`)
     const response =  students.filter(student => student.id  !== id);
     setStudents(response)
-    }
+    }*/
 
   return (
     <Container>

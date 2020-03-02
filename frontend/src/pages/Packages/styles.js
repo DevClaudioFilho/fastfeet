@@ -74,3 +74,36 @@ export const Table = styled.table`
   }
   }
 `;
+
+export const DropDown = styled.div`
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+
+  :hover div{
+    display: flex;
+    flex-direction:column;
+  }
+  div{
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 150px;
+    height: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 16px 10px;
+    z-index: 1;
+
+
+    a{
+      padding:6px auto;
+      font-size:16px;
+      color:#999999;
+      border-bottom:1px solid #EEEEEE;
+    }
+    button{
+      border:none;
+      background-color:#FFFFFF;
+    }
+    }
+`;

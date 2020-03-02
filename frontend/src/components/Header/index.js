@@ -21,7 +21,7 @@ export default function Header() {
           <Profile>
             <div>
               <strong>Demo</strong>
-              <a>sair do sistema</a>
+              <p>sair do sistema</p>
             </div>
           </Profile>
         </aside>
