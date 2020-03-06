@@ -8,16 +8,15 @@ import {Link } from 'react-router-dom'
 import Form, { Container, Title,BodyInput ,InputContainer } from './styles';
 
 export default function CreatePackages() {
-  const [setPackages] = useState([]);
+  const [packages, setPackages] = useState([]);
 
   useEffect(()=>{
     async function getPackages(){
-      const response = await api.get('/packages');
+      const response = await api.get('/packages')
       setPackages(response.data)
     }
     getPackages();
-  },[])
-
+  },[]);
 
   async function handleSubmit(data){
     console.log(data)
@@ -26,9 +25,9 @@ export default function CreatePackages() {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={()=>handleSubmit()}>
         <Title>
-          <h1>Cadastro de aluno</h1>
+          <h1>Cadastro de Entregas</h1>
           <div>
             <Link to='/packages'><button>VOLTAR</button></Link>
             <button type="submit">SALVAR</button>
@@ -36,8 +35,8 @@ export default function CreatePackages() {
         </Title>
         <InputContainer>
           <BodyInput>
-          <Input name="recipient" placeholder="John Doe" label="Destinatário"/>
-            <Input name="deliveryman" placeholder="Ludwig van Beethoven" label="Entregador"/>
+          <Input type="number" name="recipient_id" placeholder="John Doe" label="Destinatário"/>
+          <Input type="number" name="deliveryman_id" placeholder="Ludwig van Beethoven" label="Entregador"/>
           </BodyInput>
             <Input name="product" placeholder="Yamaha SX7" label="Nome do produto"/>
       </InputContainer>

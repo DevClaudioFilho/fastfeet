@@ -10,17 +10,18 @@ export const Title = styled.div`
   flex-direction:column;
   color: #444444;
 
-  div{
+  .Title{
     display:flex;
     justify-content: space-between;
     margin-top:34px;
     input {
-      background: #FFFFFF;
-      border: 1px solid #DDDDDD;
+      padding:0 8px;
+      background: transparent;
+      border:none;
       box-sizing: border-box;
-      border-radius: 4px;
-      width: 237px;
-      height: 36px;
+      width:100%;
+
+
       ::placeholder{
         font-size: 14px;
         font-weight: bold;
@@ -38,6 +39,25 @@ export const Title = styled.div`
       font-size:14px bold;
       color:#FFFFFF;
     }
+  }
+`;
+
+export const Search = styled.div`
+  width: 237px;
+  height: 36px;
+  display:flex;
+  flex-direction:row;
+  text-align:center;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  background:#ffffff;
+  svg{
+    padding:10px 0 10px 16px;
+    background:transparent;
+    border-radius: 4px;
+    border:none;
+    height: 16px;
+    width:16px;
   }
 `;
 
@@ -71,7 +91,8 @@ export const Table = styled.table`
     background: #FFFFFF;
     color:#666666;
     }
-    div{
+
+    .teste{
           width:35px;
           height:35px;
           border-radius:50%;
@@ -82,3 +103,48 @@ export const Table = styled.table`
   }
 `;
 
+
+export const DropDown = styled.div`
+  position: relative;
+  display: inline-block;
+
+  :hover div{
+    display: flex;
+    flex-direction:column;
+  }
+
+  div{
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 130px;
+    height: 70px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 16px 10px;
+    z-index: 1;
+    left:-500%;
+
+    a{
+      padding:6px 0 6px 0;
+      font-size:16px;
+      color:#999999;
+      border-bottom:1px solid #EEEEEE;
+      svg{
+        margin: 0 10px;
+        color:#4D85EE;
+      }
+    }
+    button{
+      padding:6px 0 6px 0;
+      text-align:left;
+      font-size:16px;
+      border:none;
+      background:none;
+      color:#999999;
+      svg{
+        margin: 0 10px;
+        color:#DE3B3B;
+      }
+    }
+    }
+`;

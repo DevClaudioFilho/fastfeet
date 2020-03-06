@@ -24,7 +24,7 @@ export default function Recipients() {
   return (
     <Container>
       <Title>
-        <h1>Gerenciando Destinatários</h1>
+        <h1>Gerenciando Problemas</h1>
       </Title>
         <Table>
           <thead>

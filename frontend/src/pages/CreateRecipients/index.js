@@ -24,7 +24,7 @@ export default function CreateRecipients() {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={()=>handleSubmit()}>
         <Title>
           <h1>Cadastro de aluno</h1>
           <div>

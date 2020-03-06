@@ -2,41 +2,45 @@ import React, {useState, useEffect} from 'react';
 import api from '../../services/api'
 import {Link } from 'react-router-dom'
 
+import { IoMdCreate, IoIosSearch} from 'react-icons/io'
+import { MdDelete } from 'react-icons/md'
 
-
-import { Container, Title , Table } from './styles';
+import { Container, Title , Table, DropDown, Search } from './styles';
 
 export default function Deliverymans() {
-  const [students, setStudents] = useState([]);
+  const [deliverymans, setDeliverymans] = useState([]);
 
   useEffect(()=>{
-    async function getStudents(){
-      const response = await api.get('/students');
-      setStudents(response.data)
+    async function getDeliverymans(){
+      const response = await api.get('/deliverymans');
+      setDeliverymans(response.data)
     }
-    getStudents();
+    getDeliverymans();
   },[])
 
 
-  /*function handleDelete(id){
-    api.delete(`students/${id}`)
-    const response =  students.filter(student => student.id  !== id);
-    setStudents(response)
-    }*/
+  function handleDelete(id){
+    api.delete(`deliverymans/${id}`)
+    const response =  deliverymans.filter(deliveryman => deliveryman.id  !== id);
+    setDeliverymans(response)
+    }
 
   return (
     <Container>
       <Title>
-        <h1>Gerenciando Entregadores</h1>
-        <div>
-          <input
-          id="search-input"
-          type="text"
-          placeholder="Buscar por Encomendas"
-          onChange={e =>
-           e.target.value}
-          />
-          <Link to='/createdeliverymans'><button>CADASTRAR</button></Link>
+        <h1>Gerenciando Encomendas</h1>
+        <div className="Title">
+          <Search>
+            <IoIosSearch/>
+            <input
+            id="search-input"
+            type="text"
+            placeholder="Buscar por Encomendas"
+            onChange={e =>
+             e.target.value}
+            />
+          </Search>
+          <Link to='/createpackages'><button>CADASTRAR</button></Link>
         </div>
       </Title>
         <Table>
@@ -50,14 +54,29 @@ export default function Deliverymans() {
             </tr>
           </thead>
           <tbody>
-              <tr>
-                <td>#5</td>
-                <td><div></div></td>
-                <td>mario ruan</td>
-                <td>teste@gmail.com</td>
-                <td>...</td>
+            {deliverymans.map(deliveryman => (
+              <tr key={deliveryman.id}>
+                <td>#{deliveryman.id}</td>
+                <td><div className="teste"></div></td>
+                <td>{deliveryman.name}</td>
+                <td>{deliveryman.email}</td>
+                <td>
+                  <DropDown>
+                    <p>...</p>
+                    <div>
+                      <Link to="/editdeliverymans">
+                        <IoMdCreate/>
+                        Editar
+                      </Link>
+                      <button onClick={()=>handleDelete(deliveryman.id)}>
+                        <MdDelete/>
+                        Delete
+                      </button>
+                    </div>
+                  </DropDown>
+                </td>
               </tr>
-
+            ))}
           </tbody>
         </Table>
     </Container>
