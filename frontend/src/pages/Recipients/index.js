@@ -28,7 +28,7 @@ export default function Recipients() {
   return (
     <Container>
       <Title>
-        <h1>Gerenciando Encomendas</h1>
+        <h1>Gerenciando Destinatarios</h1>
         <div className="Title">
           <Search>
             <IoIosSearch/>
@@ -40,7 +40,7 @@ export default function Recipients() {
              e.target.value}
             />
           </Search>
-          <Link to='/createpackages'><button>CADASTRAR</button></Link>
+          <Link to='/createrecipients'><button>CADASTRAR</button></Link>
         </div>
       </Title>
       <Table>
@@ -62,7 +62,7 @@ export default function Recipients() {
                   <DropDown>
                     <p>...</p>
                     <div>
-                      <Link to="/editpackages">
+                      <Link to="/createrecipients">
                         <IoMdCreate/>
                         Editar
                       </Link>

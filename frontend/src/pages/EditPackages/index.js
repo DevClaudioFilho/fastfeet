@@ -5,7 +5,7 @@ import {Link } from 'react-router-dom'
 
 import Form, { Container, Title,BodyInput ,InputContainer } from './styles';
 
-export default function CreatePackages() {
+export default function EditPackages() {
   const [packages, setPackages] = useState([]);
 
   useEffect(()=>{
@@ -18,7 +18,7 @@ export default function CreatePackages() {
 
   async function handleSubmit(data){
     console.log(data)
-    await api.post('/packages', data);
+    await api.put('/packages', data);
   }
 
   return (

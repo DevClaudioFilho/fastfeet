@@ -29,7 +29,7 @@ export default function CreateDeliverymans() {
     <Container>
       <Form onSubmit={handleSubmit}>
         <Title>
-          <h1>Cadastro de aluno</h1>
+          <h1>Cadastro de Entregadores</h1>
           <div>
             <Link to='/deliverymans'><button>VOLTAR</button></Link>
             <button type="submit">SALVAR</button>

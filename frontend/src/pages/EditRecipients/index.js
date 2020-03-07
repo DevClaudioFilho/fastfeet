@@ -5,7 +5,7 @@ import {Link } from 'react-router-dom'
 
 import Form, { Container, Title,LocateInput,RegionInput,InputContainer } from './styles';
 
-export default function CreateRecipients() {
+export default function EditRecipients() {
   const [/*recipients*/, setRecipients] = useState([]);
 
   useEffect(()=>{
@@ -26,7 +26,7 @@ export default function CreateRecipients() {
     <Container>
       <Form onSubmit={()=>handleSubmit()}>
         <Title>
-          <h1>Cadastro de Destinatarios</h1>
+          <h1>Editr Destinatario</h1>
           <div>
             <Link to='/recipients'><button>VOLTAR</button></Link>
             <button type="submit">SALVAR</button>

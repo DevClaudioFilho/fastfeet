@@ -28,7 +28,7 @@ export default function Deliverymans() {
   return (
     <Container>
       <Title>
-        <h1>Gerenciando Encomendas</h1>
+        <h1>Gerenciando Entregadores</h1>
         <div className="Title">
           <Search>
             <IoIosSearch/>
@@ -40,7 +40,7 @@ export default function Deliverymans() {
              e.target.value}
             />
           </Search>
-          <Link to='/createpackages'><button>CADASTRAR</button></Link>
+          <Link to='/createdeliverymans'><button>CADASTRAR</button></Link>
         </div>
       </Title>
         <Table>

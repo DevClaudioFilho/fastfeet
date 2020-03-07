@@ -27,9 +27,9 @@ export default function CreateDeliverymans() {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={()=>handleSubmit()}>
         <Title>
-          <h1>Cadastro de Entregas</h1>
+          <h1>Cadastro de Entregadores</h1>
           <div>
             <Link to='/deliverymans'><button>VOLTAR</button></Link>
             <button type="submit">SALVAR</button>
