@@ -6,7 +6,7 @@ import Routes from './routes';
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar barStyle="light-content" backgroundColor="blue" />
+      <StatusBar barStyle="light-content" backgroundColor="#7D40E7" />
       <Routes />
     </>
   );
